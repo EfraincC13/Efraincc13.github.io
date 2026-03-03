@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultorio de Nutrición | Danna Chavira</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --primary: #2B5B43;
+        --primary-light: #3A7A5A;
+        --secondary: #E8F0EA;
+        --accent: #D4AF37;
+        --text-dark: #1A1A1A;
+        --text-light: #F5F5F5;
+    }
+    body {
+        margin: 0;
+        font-family: 'Outfit', sans-serif;
+        background: #FAFAFA;
+        color: var(--text-dark);
+        scroll-behavior: smooth;
+    }
+    /* Hero Section */
+    .hero {
+        position: relative;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        background: linear-gradient(rgba(43, 91, 67, 0.6), rgba(26, 26, 26, 0.8)), url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2000') no-repeat center center/cover;
+    }
+    .hero-content {
+        max-width: 800px;
+        padding: 20px;
+        animation: fadeIn 1.5s ease-out;
+    }
+    .hero h1 {
+        font-size: 4rem;
+        margin-bottom: 10px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+    .hero p {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        font-weight: 300;
+    }
+    .btn {
+        display: inline-block;
+        padding: 15px 35px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+    }
+    .btn-primary {
+        background: var(--accent);
+        color: white;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    }
+    .btn-primary:hover {
+        background: #b5952f;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+    }
+    
+    /* Section About */
+    .section {
+        padding: 100px 5%;
+    }
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+    }
+    .about-image {
+        position: relative;
+    }
+    .about-image img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+    }
+    .about-image img:hover {
+        transform: scale(1.02);
+    }
+    .about-text h2 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+    }
+    .about-text p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    /* Location Section */
+    .location-section {
+        background: var(--secondary);
+        text-align: center;
+        padding: 80px 5%;
+    }
+    .location-section h2 {
+        color: var(--primary);
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    .location-section p {
+        font-size: 1.25rem;
+        color: #444;
+        max-width: 700px;
+        margin: 0 auto 40px;
+        line-height: 1.6;
+    }
+    .map-container {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 15px;
+        border-radius: 20px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    /* Appointment / Contact form */
+    .contact-section {
+        max-width: 800px;
+        margin: 100px auto;
+        text-align: center;
+        padding: 50px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    }
+    .contact-section h2 {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 15px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333;
+    }
+    .form-control {
+        width: 100%;
+        padding: 15px;
+        border: 2px solid #EEE;
+        border-radius: 10px;
+        font-family: 'Outfit', sans-serif;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+        box-sizing: border-box;
+    }
+    .form-control:focus {
+        outline: none;
+        border-color: var(--primary-light);
+    }
+    
+    footer {
+        background: var(--primary);
+        color: var(--secondary);
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media(max-width: 768px) {
+        .hero h1 { font-size: 2.5rem; }
+        .hero p { font-size: 1.1rem; }
+        .hero-content { padding: 15px; }
+        .section, .location-section { padding: 60px 5%; }
+        .about-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+        .about-text h2 { font-size: 2rem; }
+        .location-section h2, .contact-section h2 { font-size: 2rem; }
+        .contact-section { margin: 50px 20px; padding: 30px 20px; }
+        .map-container img { height: 250px; }
+        .btn { width: 100%; box-sizing: border-box; text-align: center; }
+        .btn-primary { padding: 15px 20px; }
+    }
+    @media(max-width: 480px) {
+        .hero h1 { font-size: 2rem; }
+        .hero p { font-size: 1rem; }
+        .section, .location-section { padding: 40px 5%; }
+    }
+</style>
+</head>
+<body>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Danna Chavira</h1>
+        <p>Tu camino hacia un estilo de vida saludable y equilibrado, sin dietas restrictivas.</p>
+        <a href="#agendar" class="btn btn-primary">Agendar mi Cita</a>
+    </div>
+</section>
+
+<section class="section">
+    <div class="about-grid">
+        <div class="about-image">
+            <img src="nutridanna.jpeg" alt="Consultorio de Nutrición">
+        </div>
+        <div class="about-text">
+            <h2>¿Quién es Danna?</h2>
+            <p>Soy Danna Chavira, una apasionada especialista en nutrición. Mi compromiso es ayudarte a alcanzar tus metas de salud de forma realista y sostenible. Creo que la alimentación debe ser un puente hacia tu bienestar físico y mental, adaptándose a ti, tus gustos y tu estilo de vida.</p>
+            <p>Con planes 100% personalizados, te acompañaré paso a paso para mejorar tu energía, tu digestión y tu composición corporal. Mi consultorio es un espacio seguro donde construiremos juntos tu mejor versión.</p>
+            <a href="#agendar" class="btn btn-primary" style="background: var(--primary);">Comenzar mi transformación</a>
+        </div>
+    </div>
+</section>
+
+<section class="location-section">
+    <h2>Nuestra Ubicación</h2>
+    <p>📍 Nos encontramos en una ubicación accesible para tu comodidad: <br><strong>¡Cercas de la Casa del Sushi en Guasave, Sinaloa!</strong></p>
+    <div class="map-container">
+        <!-- Placeholder visual para la ubicación -->
+        <img src="ubi.png" alt="Mapa" style="width: 100%; border-radius: 10px; height: 350px; object-fit: cover;">
+    </div>
+</section>
+
+<section id="agendar" class="contact-section">
+    <h2>Saca tu Cita Hoy</h2>
+    <p style="color: #666; margin-bottom: 30px; line-height: 1.5;">Completa este formulario y nos pondremos en contacto contigo lo antes posible para confirmar el horario de tu valoración nutricional.</p>
+    <form action="#" method="POST">
+        <div class="form-group">
+            <label>Nombre Completo</label>
+            <input type="text" class="form-control" placeholder="Ej. Ana Pérez" required>
+        </div>
+        <div class="form-group">
+            <label>Teléfono (WhatsApp)</label>
+            <input type="tel" class="form-control" placeholder="Tu número de celular" required>
+        </div>
+        <div class="form-group">
+            <label>¿Cuál es tu objetivo principal?</label>
+            <select class="form-control" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option>Pérdida de peso y grasa</option>
+                <option>Aumento de masa muscular</option>
+                <option>Mejora de salud digestiva y hábitos</option>
+                <option>Nutrición clínica y deportiva</option>
+                <option>Otro</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Comentarios adicionales</label>
+            <textarea class="form-control" rows="3" placeholder="¿Tienes alguna condición médica o duda general?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 15px; font-size: 1.2rem; padding: 18px;">Solicitar Cita</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Consultorio de Nutrición Danna Chavira. Todos los derechos reservados.</p>
+    <p style="font-size: 0.9rem; margin-top: 5px; opacity: 0.8;">Guasave, Sinaloa</p>
+</footer>
+
+</body>
+</html>
